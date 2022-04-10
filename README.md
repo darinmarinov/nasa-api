@@ -1,33 +1,33 @@
+To run the project:
+- npm install
+- npm run dev
 
-Да тръгне трябва
--- npm install
--- npm run dev
+The project has the following setup vue, vuetify and typescript
+Endpoints have been tested with Postman
+Global variables are exported
+Helper feature that is used in several places
+Routing that is dynamic
 
-Проекта е със следният сетъп vue, vuetify and typescript
-Ендпойнтите са тествани с Postman
-Глобалните променливи са изнесени
-Хелпър функция която се използва на няколко места
-Routing който е динамичен 
+First page covers APOD api,
+as here you can choose from the calendar or a date or a range of dates
+in one case it will update the photo of the day, in the date range it will create a timeLine with the photos for those days of the period.
 
-Първа страница обхваща APOD api,
-като тука може да избирата от календара или една дата или рейндж от дати
-при единият случай ще ъпдейтне снимката на деня, при рейнджа от дати ще създаде timeLine със снимките за тези дни от периода.
+The second page covers the Earth api,
+here again you can select only one date from the calendar, but most of them aren't have a photo, so there is an option with a selector for the same date,
+but for the previous five years to choose
 
-Втора страница обхваща Earth api,
-тука пак от календар може да изберете само една дата, но повечето са без снимка, затова има опция със селектор за същата дата,
-но за предишните пет години да изберете опция
+Third page covers Epic api,
+here you have a selector with all possible dates, when choosing which you will find a photo
 
-Трета страница обхваща Epic api,
-тука имате селектор с всички възможни дати, при избора на който ще ви намери снимка
+The fourth and fifth pages cover login and registration,
+here I have a problem with the import of firebases which at first glance I'm not sure why, and I did not have time to investigate, but I tried the simplest options (whitout any success),
+I left the code for them because as a functionality with firebases it is quite simple, and I have done it many times in quite complex applications, but in general because of
+importing firebases these functionalities do not work and also the ability to crude via firebases (which I have also done hundreds of times)
 
-Четварта и пета страница обхващат логин и регистрация,
-тука имам някакъв проблем с импорта на файрбейз който на пръв поглед не съм сигурен защо, и нямах време да разследвам, но опитах най простите вариянти,
-оставил съм кода за тях понеже като функционалост с файрбейз е доста проста, a и съм го правил доста пъти при доста сложни апликации, но като цяло тука в момента заради
-импорта на файрбейс тези функционалности не работят и също възможността за круд посредством файрбейс (което също съм правил стотици пъти)
-
-Неща за които не съм отделил време, но може да се подобрят: 
--- css,
--- api key e добре да бъде секюрнат посредством някакъв бекенд (най лесно в текущият вариянт е node js)
--- cardImage може да се изнесе, както и date selector
--- и доста по добре да бъде използван typescript като функционалости които дава като интерфейси и тип на данните и методите
--- да се намалят dependency като това за date picker 
+Things I haven't taken the time to do, but it could get better:
+- css,
+- api key is good to be secured by some backend (easiest in the current version is node js)
+- cardImage can be exported as well as a date selector
+- and it is much better to use typescript as functionalities that it gives as interfaces and type of data and methods
+- reduce dependency like that for date picker
+- I haven't followed any git flow where I have a dev and everything is separate in branches
