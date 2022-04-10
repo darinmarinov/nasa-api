@@ -14,7 +14,6 @@
     "*": "prettier -w -u"
   },
   "dependencies": {
-    "@intlify/vite-plugin-vue-i18n": "^2.4.0",
     "@mdi/font": "5.9.55",
     "@vuepic/vue-datepicker": "^3.0.0",
     "firebase": "^9.6.10",

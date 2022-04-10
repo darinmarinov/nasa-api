@@ -18,14 +18,15 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/Epic.vue')
   },
   {
+    name: 'SignIn',
+    path: "/sign-in",
+    component: () => import("../views/SignIn.vue"),
+  },
+  {
     name: 'Register',
     path: "/register",
     component: () => import("../views/Register.vue"),
   },
-  // {
-  //   path: "/sign-in",
-  //   component: () => import("../views/SignIn.vue"),
-  // },
   // {
   //   path: '/:catchAll(.*)',
   //   name: 'PageNotFound',

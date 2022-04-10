@@ -5,8 +5,6 @@ import router from "./router";
 import Datepicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
 import * as firebase from "firebase/app"
-import { initializeApp } from "firebase/app"
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDgrZfPkhTmcNbzwhXTZwJaV3iFRQ_gVRE",
@@ -18,6 +16,7 @@ const firebaseConfig = {
   };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+console.log(firebase.initializeApp)
 
 const app = createApp(App).use(router).use(vuetify)
 

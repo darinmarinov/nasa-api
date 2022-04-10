@@ -1,44 +1,50 @@
 <script setup>
   import { ref } from 'vue'
   import * as firebase from 'firebase/app'
-  import { useRouter } from 'vue-router'
-
-  console.log(firebase) // Undefined
-
+  import { useRouter } from 'vue-router' // import router
   const email = ref('')
   const password = ref('')
+  const errMsg = ref()
   const router = useRouter()
-  const register = () => {
-    try {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(email.value, password.value)
-        .then((data) => {
-          console.log('Successfully registered!')
-          router.push('/Home')
-        })
-        .catch((error) => {
-          console.log(error.code)
-          alert(error.message)
-        })
-    } catch (error) {
-      console.log(error)
-    }
+  const signIn = () => {
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email.value, password.value)
+      .then((data) => {
+        console.log('Successfully logged in!');
+        router.push('/Home')
+      })
+      .catch(error => {
+        switch (error.code) {
+          case 'auth/invalid-email':
+              errMsg.value = 'Invalid email'
+              break
+          case 'auth/user-not-found':
+              errMsg.value = 'No account with that email was found'
+              break
+          case 'auth/wrong-password':
+              errMsg.value = 'Incorrect password'
+              break
+          default:
+              errMsg.value = 'Email or password was incorrect'
+              break
+        }
+      });
   }
 </script>
+
 <template>
-  <v-container class="grey lighten-5 mt-16 mb-6">
+<v-container class="grey lighten-5 mt-16 mb-6">
     <v-row>
       <v-col cols="12 text-center">
-        <h1>Create an Account</h1>
+        <h1>Login to Your Account</h1>
         <p><input type="text" placeholder="Email" v-model="email" /></p>
-        <p>
-          <input type="password" placeholder="Password" v-model="password" />
-        </p>
-        <p><button class="button" @click="register">Submit</button></p>
+        <p><input type="password" placeholder="Password" v-model="password" /></p>
+        <p v-if="errMsg">{{ errMsg }}</p>
+        <p><button class="button" @click="signIn">Submit</button></p>
       </v-col>
     </v-row>
-  </v-container>
+</v-container>
 </template>
 <style scoped>
   input[type='text'],
