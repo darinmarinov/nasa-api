@@ -1,17 +1,33 @@
-# nasa-api
-Test
-- Vue 3: Template is completly build with latest vue 3 features like Single file component and <script setup> mode which makes your code much more clean and readable.
-  Router, Directives, Middlewares and Mixins are all configured and prebuilt in to the template.
-- Typescript: The whole project is written with typescipt modular form.
-- Vite: The project is built on top of vite, which have boosted everything from server side rendering up to production bundle. You can read this official article from Vite to know more about it <https://vitejs.dev/guide/why.html>.
-- Vuetify 3: Alpha version of Vuetify 3 is available and is completly configured including custom themes and colors.
-- SCSS: Sass is configured and is integrated to work globally as well as inside local components, it is integrated with vuetify too.
-- Vuex Store: Store is configured with module form that supports multiple versions of stores with dfferent names, as it is more efficient for medium and big projects.
 
-## Latest Updates
+Да тръгне трябва
+-- npm install
+-- npm run dev
 
-- Multilangual Configurations (i18n) added.
-  
-## Type Support For `.vue` Imports in TS
+Проекта е със следният сетъп vue, vuetify and typescript
+Ендпойнтите са тествани с Postman
+Глобалните променливи са изнесени
+Хелпър функция която се използва на няколко места
+Routing който е динамичен 
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+Първа страница обхваща APOD api,
+като тука може да избирата от календара или една дата или рейндж от дати
+при единият случай ще ъпдейтне снимката на деня, при рейнджа от дати ще създаде timeLine със снимките за тези дни от периода.
+
+Втора страница обхваща Earth api,
+тука пак от календар може да изберете само една дата, но повечето са без снимка, затова има опция със селектор за същата дата,
+но за предишните пет години да изберете опция
+
+Трета страница обхваща Epic api,
+тука имате селектор с всички възможни дати, при избора на който ще ви намери снимка
+
+Четварта и пета страница обхващат логин и регистрация,
+тука имам някакъв проблем с импорта на файрбейз който на пръв поглед не съм сигурен защо, и нямах време да разследвам, но опитах най простите вариянти,
+оставил съм кода за тях понеже като функционалост с файрбейз е доста проста, a и съм го правил доста пъти при доста сложни апликации, но като цяло тука в момента заради
+импорта на файрбейс тези функционалности не работят и също възможността за круд посредством файрбейс (което също съм правил стотици пъти)
+
+Неща за които не съм отделил време, но може да се подобрят: 
+-- css,
+-- api key e добре да бъде секюрнат посредством някакъв бекенд (най лесно в текущият вариянт е node js)
+-- cardImage може да се изнесе, както и date selector
+-- и доста по добре да бъде използван typescript като функционалости които дава като интерфейси и тип на данните и методите
+-- да се намалят dependency като това за date picker 
