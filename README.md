@@ -1,12 +1,14 @@
 To run the project:
 - npm install
 - npm run dev
-
-The project has the following setup vue, vuetify and typescript
-Endpoints have been tested with Postman
-Global variables are exported
-Helper feature that is used in several places
-Routing that is dynamic
+<p>###</p>
+<ul>
+ <li>The project has the following setup vue, vuetify and typescript</li>
+ <li>Endpoints have been tested with Postman</li>
+<li>Global variables are exported</li>
+<li>Helper feature that is used in several places</li>
+<li>Routing that is dynamic</li>
+</ul>
 
 First page covers APOD api,
 as here you can choose from the calendar or a date or a range of dates
